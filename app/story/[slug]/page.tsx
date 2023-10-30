@@ -70,9 +70,9 @@ export default async function Story({ params }: Props) {
     }
   });
   return (
-    <>
+    <div className='min-h-screen bg-gradient-to-b from-fuchsia-400 via-violet-500 to-purple-200 '>
       <div className='max-w-4xl mx-auto'>
-        <div className='flex flex-col h-96 justify-center items-center'>
+        <div className='flex flex-col h-72 justify-center items-center'>
           <div className='flex-grow flex justify-center items-center'>
             <h1 className='text-6xl'>{story.title}</h1>
           </div>
@@ -145,6 +145,6 @@ export default async function Story({ params }: Props) {
           }}
         />
       </div>
-    </>
+    </div>
   );
 }

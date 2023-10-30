@@ -2,6 +2,7 @@ import { Api } from '@/shared/api';
 import { dateConfig } from '@/shared/consts';
 import { sanityClient } from '@/shared/sanity';
 import { IStorySimple } from '@/shared/story.interface';
+import Image from 'next/image';
 import Link from 'next/link';
 
 // TODO: change this probably
@@ -20,12 +21,13 @@ export default async function Home() {
   `);
   return (
     <>
-      <div className='min-h-screen bg-purple-200'>
+      <div className='min-h-screen bg-gradient-to-b from-fuchsia-600 to-fuchsia-100 '>
         <div>
-          <div className='h-96 bg-gradient-to-t from-sky-400 to-fuchsia-400 flex flex-col justify-center items-center gap-3'>
-            <h1 className='text-6xl text-purple-200'>{`Welcome to`}</h1>
-            <h1 className='text-6xl text-sky-100'>{`Zihan's stories`}</h1>
-            <h2 className='text-gray-200'>Designed by Tom</h2>
+          <div className='h-96 bg-gradient-to-t from-fuchsia-600 to-fuchsia-400 flex flex-col justify-center items-center gap-3'>
+            <h1 className='text-2xl text-purple-200'>{`Welcome to`}</h1>
+            <Image src='/purplegirl.svg' alt='Lulu' width={100} height={100} className='rounded-full'></Image>
+            <h1 className='text-6xl text-sky-100 font-extrabold'>{`Lulu's stories`}</h1>
+            <h2 className='text-gray-200 text-sm'>Designed by Tom</h2>
           </div>
         </div>
         <main className='flex max-w-4xl mx-auto'>
@@ -35,7 +37,7 @@ export default async function Home() {
                 <Link key={`${index}-${simpleStory.slug.current}`} href={`/${Api.story}/${simpleStory.slug.current}`}>
                   <div className='d-flex flex-col gap-1 p-2 border rounded-lg border-white shadow'>
                     <p>{simpleStory.title}</p>
-                    <p className='text-xs text-gray-500'>
+                    <p className='text-xs text-gray-800'>
                       {new Date(simpleStory._createdAt).toLocaleString(undefined, dateConfig)}
                     </p>
                   </div>
@@ -45,6 +47,9 @@ export default async function Home() {
           </div>
         </main>
       </div>
+      <footer className='flex justify-center items-center h-12 bg-gradient-to-t from-fuchsia-200 to-fuchsia-100'>
+        <p className='text-indigo-500 text-sm'>Version: 1.0.0</p>
+      </footer>
     </>
   );
 }
