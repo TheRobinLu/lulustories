@@ -25,7 +25,7 @@ export default async function Home() {
         <div>
           <div className='h-96 bg-gradient-to-t from-fuchsia-600 to-fuchsia-400 flex flex-col justify-center items-center gap-3'>
             <h1 className='text-2xl text-purple-200'>{`Welcome to`}</h1>
-            <Image src='/purplegirl.svg' alt='Lulu' width={100} height={100} className='rounded-full'></Image>
+            <Image src='/Story.png' alt='Lulu' width={240} height={240}></Image>
             <h1 className='text-6xl text-sky-100 font-extrabold'>{`Lulu's stories`}</h1>
             <h2 className='text-gray-200 text-sm'>Designed by Tom</h2>
           </div>
@@ -48,7 +48,7 @@ export default async function Home() {
         </main>
       </div>
       <footer className='flex justify-center items-center h-12 bg-gradient-to-t from-fuchsia-200 to-fuchsia-100'>
-        <p className='text-indigo-500 text-sm'>Version: 1.0.0</p>
+        <p className='text-indigo-500 text-sm'>Version: 1.0.1</p>
       </footer>
     </>
   );
